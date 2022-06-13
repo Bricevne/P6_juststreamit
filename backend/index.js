@@ -11,7 +11,7 @@ function addInformation(movie) {
   const country = movie.countries[0];
   const boxOffice = movie.avg_vote;
   const description = movie.long_description;
-  const inf = `Title: ${title}\n\
+  return `Title: ${title}\n\
   Genre: ${genre}\n\
   Release: ${releaseDate}\n\
   Rated: ${rated}\n\
@@ -21,36 +21,35 @@ function addInformation(movie) {
   Duration: ${duration}\n\
   Country: ${country}\n\
   Box Office: ${boxOffice}\n\
-  Description: ${description}`;
-  return inf
+  Description: ${description}`
 }
 
 
   // Get the modal
-  var modal = document.getElementById("modal");
+var modal = document.querySelector("#modal");
 
   // Get the button that opens the modal
-  var btn = document.getElementById("best-movie__btn");
+var btn = document.querySelector("#best-movie__btn");
   
   // Get the <span> element that closes the modal
-  var span = document.getElementsByClassName("modal__close-btn")[0];
+var span = document.querySelector(".modal__close-btn");
   
   // When the user clicks on the button, open the modal
-  btn.addEventListener("click", function() {
-    modal.style.display = "block";
-  })
+btn.addEventListener("click", function() {
+  modal.style.display = "block";
+})
   
   // When the user clicks on <span> (x), close the modal
-  span.addEventListener("click", function() {
-    modal.style.display = "none";
-  })
+span.addEventListener("click", function() {
+  modal.style.display = "none";
+})
   
   // When the user clicks anywhere outside of the modal, close it
-  window.addEventListener("click", function(event) {
-    if (event.target == modal) {
-      modal.style.display = "none";
-    }
-  })
+window.addEventListener("click", function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+})
 
 fetch("http://localhost:8000/api/v1/titles/?year=&min_year=&max_year=&imdb_score=&imdb_score_min=&imdb_score_max=&title=&title_contains=&genre=&genre_contains=&sort_by=-imdb_score&director=&director_contains=&writer=&writer_contains=&actor=&actor_contains=&country=&country_contains=&lang=&lang_contains=&company=&company_contains=&rating=&rating_contains=")
 .then(function(res) {
@@ -67,10 +66,12 @@ fetch("http://localhost:8000/api/v1/titles/?year=&min_year=&max_year=&imdb_score
           }
         })
       .then(function(movie) {
-        document.getElementsByClassName("best-movie")[0].innerHTML += `<picture> <img alt="affiche de film" src="${movie.image_url}" id=${value.id} class="best-movie__image" aria-hidden="true"/> </picture> \
+        document.querySelector(".best-movie").appendChild(document.createElement("div"));
+        document.querySelector(".best-movie").lastChild.innerHTML += `<picture> <img alt="affiche de film" src="${movie.image_url}" id=${movie.id} class="best-movie__image" aria-hidden="true"/></picture> \
         <h1 class="best-movie__title">${movie.title}</h1>\
-        <p class="best-movie__description">${movie.long_description}</p>`
-        document.getElementsByClassName("modal__image")[0].setAttribute("src", movie.image_url);
-        document.getElementById("modal__movie-information").innerText = addInformation(movie);
+        <p class="best-movie__description">${movie.long_description}</p>`;
+        
+        document.querySelector(".modal__image").setAttribute("src", movie.image_url);
+        document.querySelector("#modal__movie-information").innerText = addInformation(movie);
         });
   })
