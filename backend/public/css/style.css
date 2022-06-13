@@ -148,6 +148,7 @@ button {
   background-color: rgb(37, 37, 37); /* Fallback color */
   margin: 15% auto; /* 15% from the top and centered */
   padding: 20px;
+  line-height: 4rem;
   font-size: 2rem;
   border: 1px solid #888;
   width: 80%; /* Could be more or less, depending on screen size */
