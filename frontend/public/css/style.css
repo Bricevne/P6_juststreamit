@@ -1,0 +1,196 @@
+@font-face {
+  font-family: "Dayrom";
+  src: url("../font/dayrom.eot");
+  src: url("../font/dayrom.eot?#iefix") format("embedded-opentype"), url("../font/dayrom.woff") format("woff"), url("../font/dayrom.ttf") format("truetype"), url("../font/dayrom.svg#Dayrom") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 70%;
+}
+
+body {
+  box-sizing: border-box;
+  background: black;
+  font-family: "Dayrom", sans-serif;
+  color: #fff;
+  font-size: 2rem;
+  line-height: 1.7;
+}
+
+h1 {
+  font-family: "Dayrom", sans-serif;
+  font-size: 3rem;
+  font-style: italic;
+}
+
+button {
+  font-family: "Dayrom", sans-serif;
+  font-style: italic;
+  font-size: 2.75rem;
+}
+
+.header {
+  background-color: #aaa;
+  height: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.header__logo {
+  font-size: 4rem;
+  color: #8f222f;
+  margin-left: 10rem;
+  text-shadow: 0.5rem 0.5rem #919191;
+}
+
+.nav {
+  margin-right: 10rem;
+  text-align: right;
+}
+.nav ul {
+  display: flex;
+  list-style-type: none;
+}
+.nav__link {
+  font-size: 1.5rem;
+  padding-left: 3rem;
+}
+.nav__link a {
+  text-decoration: none;
+  color: #000;
+}
+.nav__link a:hover {
+  color: #8f222f;
+}
+.nav__link--active {
+  color: #225e8f;
+}
+.nav__link--active:hover {
+  cursor: default;
+  color: #8f222f;
+}
+
+.container {
+  margin: 2.5rem;
+}
+
+.best-movie {
+  position: relative;
+}
+.best-movie picture {
+  display: block;
+  z-index: -1;
+  position: relative;
+  height: 600px;
+  width: auto;
+  background-image: linear-gradient(to bottom, rgba(7, 7, 7, 0.7) 10%, rgba(0, 0, 0, 0)); /*netflix gradiant*/
+}
+.best-movie__image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center 60%;
+  opacity: 0.5;
+}
+.best-movie__btn {
+  padding: 4px 30px;
+  position: absolute;
+  top: 70%;
+  margin-left: 5%;
+  border: 0.1rem solid white;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  background-color: red;
+  cursor: pointer;
+}
+.best-movie h1 {
+  position: absolute;
+  font-size: 5rem;
+  top: 20%;
+}
+.best-movie__description {
+  position: absolute;
+  height: 25%;
+  overflow: auto;
+  margin-left: 3%;
+  width: 50%;
+  top: 40%;
+}
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+.modal__content {
+  background-color: rgb(37, 37, 37); /* Fallback color */
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  line-height: 4rem;
+  font-size: 2rem;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+.modal picture {
+  z-index: 2;
+  background-color: rgb(37, 37, 37);
+  position: relative;
+  margin-left: 5%;
+  margin-bottom: 5%;
+  float: right;
+  height: 536px;
+  width: 35%;
+}
+.modal__image {
+  position: absolute;
+  z-index: 3;
+  height: 100%;
+  width: auto;
+}
+.modal__close-btn {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+.modal__close-btn:hover {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+.modal__close-btn:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.other-categories {
+  text-align: center;
+}
+.other-categories h1 {
+  font-size: 2.5rem;
+}
+
+/*# sourceMappingURL=style.css.map */

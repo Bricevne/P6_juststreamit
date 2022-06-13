@@ -1,0 +1,225 @@
+$colour-primary: #fff;
+$colour-secondary: #aaa;
+$colour-accent: #225e8f;
+$colour-black: #000;
+$colour-title: #8f222f;
+
+$heading-shadow-size: .55rem;
+
+@function lightness-shift($colour) {
+    @if (lightness($colour) < 25%){
+        @return lighten($colour, 10%);
+    }@else{
+        @return darken($colour, 10%);
+    }
+}
+
+@mixin heading-shadow($colour:lightness-shift($colour-secondary), $offset: 0.5rem) {
+    text-shadow: $offset $offset $colour;
+}
+
+
+
+@font-face
+{
+    font-family: 'Dayrom';
+    src: url('../font/dayrom.eot');
+    src: url('../font/dayrom.eot?#iefix') format('embedded-opentype'),
+         url('../font/dayrom.woff') format('woff'),
+         url('../font/dayrom.ttf') format('truetype'),
+         url('../font/dayrom.svg#Dayrom') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 70%;
+}
+
+body {
+    box-sizing: border-box;
+    background: black;
+
+    font-family: 'Dayrom', sans-serif;
+    color: $colour-primary;
+    font-size: 2rem;
+    line-height: 1.7;
+}
+
+
+h1 {
+    font-family: 'Dayrom', sans-serif;
+    font-size: 3rem;
+    font-style: italic;
+}
+
+button {
+    font-family: 'Dayrom', sans-serif;
+    font-style: italic;
+    font-size: 2.75rem;
+}
+
+
+.header {
+    background-color: $colour-secondary;
+    height: 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    &__logo {
+        font-size: 4rem;
+        color: $colour-title;
+        margin-left: 10rem;
+        @include heading-shadow()
+    }
+}
+
+.nav {
+    margin-right: 10rem;
+    text-align: right;
+    & ul {
+        display: flex;
+        list-style-type: none;
+    }
+    &__link {
+        font-size: 1.5rem;
+        padding-left: 3rem;
+        & a {
+            text-decoration: none;
+            color: $colour-black;
+            &:hover {
+                color: $colour-title;
+            }
+        }
+        &--active {
+            color: $colour-accent;
+            &:hover {
+                cursor: default;
+                color: $colour-title;
+            }
+        }
+    }
+}
+
+.container {
+    margin: 2.5rem;
+}
+
+.best-movie {
+    position: relative;
+    margin-bottom: 10px;
+    & picture {
+        display: block;
+        z-index: -1;
+        position: relative;
+        height: 600px;
+        width: auto;
+        background-image: linear-gradient(to bottom, rgba(7, 7, 7, 0.7) 10%, rgba(0, 0, 0, 0)); /*netflix gradiant*/
+    }
+    &__image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: center 60%;
+        opacity: 0.5;
+    }
+    &__btn {
+        padding: 4px 30px;
+        position: absolute;
+        top: 70%;
+        margin-left: 5%;
+        border: 0.1rem solid white;
+        border-radius: 5px;
+        text-align: center;
+        text-decoration: none;
+        color: white;
+        background-color: red;
+        cursor: pointer;
+    }
+    & h1 {
+        position: absolute;
+        font-size: 5rem;
+        top: 20%;
+    }
+    &__description {
+        position: absolute;
+        height: 25%;
+        overflow: auto;
+        margin-left: 3%;
+        width: 50%;
+        top: 40%;
+    }
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+    &__content {
+        background-color: rgb(37, 37, 37); /* Fallback color */
+        margin: 15% auto; /* 15% from the top and centered */
+        padding: 20px;
+        line-height: 4rem;
+        font-size: 2rem;
+        border: 1px solid #888;
+        width: 80%; /* Could be more or less, depending on screen size */
+    }
+    & picture {
+        z-index: 2;
+        background-color: rgb(37, 37, 37);
+        position: relative;
+        margin-left: 5%;
+        margin-bottom: 5%;
+        float: right;
+        height: 536px;
+        width: 35%;
+    }
+    &__image {
+        position: absolute;
+        z-index: 3;
+        height: 100%;
+        width: auto;
+    }
+    &__close-btn {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+        &:hover {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        &:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    }
+}
+
+.other-categories {
+    text-align: center;
+    & h1 {
+        font-size: 2.5rem;
+    }
+}
