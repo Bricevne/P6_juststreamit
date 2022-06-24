@@ -1,8 +1,7 @@
-const mySecondTimeout = setTimeout(main, 500);
-let numberOfImages = 7;
-let numberOfImagesScreen = 5;
-let numberOfSlides = numberOfImages - numberOfImagesScreen;
-let imageWidth = 280; // image width + padding right
+const numberOfImages = 7;
+const numberOfImagesScreen = 5;
+const numberOfSlides = numberOfImages - numberOfImagesScreen;
+const imageWidth = 20; // image width + padding right
 
 const categories = ["new-releases", "drama", "mystery", "action"];
 
@@ -38,7 +37,9 @@ function main() {
         }
         
         let translateX = imageWidth * index * -1;
-        itemContainer.style.transform = `translateX(${translateX}px)`;
+        itemContainer.style.transform = `translateX(${translateX}%)`;
         }
         }
     }
+
+const mySecondTimeout = setTimeout(main, 500);
