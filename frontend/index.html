@@ -9,34 +9,67 @@
     <body>
         <header class="header">
             <h1 class="header__logo">JustStreamIt</h1>
+            <!-- Navigation list -->
             <nav class="nav">
                 <ul>
-                    <li class="nav__link nav__link--active">Home</li>
-                    <li class="nav__link"> <a href="./categories.html">Categories</a></li>
+                    <li class="nav__link"> <a href="#">Home</a></li>
+                    <li class="nav__link"> <a href="#drama">Drama</a></li>
+                    <li class="nav__link"> <a href="#mystery">Mystery</a></li>
+                    <li class="nav__link"> <a href="#action">Action</a></li>
                 </ul>
             </nav>
         </header>
 
         <main class="container">
-            <section class="best-movie">       
 
+            <!-- Main poster -->
+            <section class="best-movie">       
                 <a class="best-movie__btn">Play</a>
             </section>
-            <section class="other-categories">
-                <div class="new-releases">
-                    <h1>New releases</h1>
+
+            <!-- Carousels -->
+            <div class="categories">
+                <section class="other-movies" id="new-releases">
+                    <h1 class="other-movies__title">New releases</h1>
+                    <div class="other-movies__pictures new-releases"></div>
+                    <a class="other-movies__left-arrow"><</a>
+                    <a class="other-movies__right-arrow">></a>
+                </section>
+                <section class="other-movies" id="drama">
+                    <h1 class="other-movies__title">Drama</h1>
+                    <div class="other-movies__pictures drama"></div>
+                    <a class="other-movies__left-arrow"><</a>
+                    <a class="other-movies__right-arrow">></a>
+                </section>
+                <section class="other-movies" id="mystery">
+                    <h1 class="other-movies__title">Mystery</h1>
+                    <div class="other-movies__pictures mystery"></div>
+                    <a class="other-movies__left-arrow"><</a>
+                    <a class="other-movies__right-arrow">></a>
+                </section>
+                <section class="other-movies" id="action">
+                    <h1 class="other-movies__title">Action</h1>
+                    <div class="other-movies__pictures action"></div>
+                    <a class="other-movies__left-arrow"><</a>
+                    <a class="other-movies__right-arrow">></a>
+                </section>
+            </div>
+
+            <!-- Modal -->
+            <div class="modal">
+                <div class='modal__content'>
+                    <span class='modal__close-btn'>&times;</span>
+                    <picture>
+                        <img class='modal__image' src='' alt='Movie image'/>
+                    </picture>
+                    <p id='modal__movie-information'></p>
                 </div>
-                <div class="drama">
-                    <h1>Drama</h1>
-                </div>
-                <div class="mystery">
-                    <h1>Mystery</h1>
-                </div>
-                <div class="action">
-                    <h1>Action</h1>
-                </div>
-            </section>
+            </div>
+            <!-- End modal -->
+
         </main>
-        <script type="text/javascript" src="./index.js"></script>
+        <script type="text/javascript" src="./fetch.js"></script>
+        <script type="text/javascript" src="./modal.js"></script>
+        <script type="text/javascript" src="./carousel.js"></script>
     </body>
 </html>

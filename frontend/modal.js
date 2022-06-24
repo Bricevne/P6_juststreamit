@@ -45,7 +45,6 @@ function main() {
         modal.style.display = "block";
     })
 
-
     // When the user clicks on <span> (x), close the modal
     span.addEventListener("click", function() {
     modal.style.display = "none";
@@ -57,4 +56,15 @@ function main() {
     modal.style.display = "none";
     }
     })
+
+    const images = document.querySelectorAll(".other-movies__image");
+    for (let movie of images) {
+        movie.addEventListener("click", async function() {
+            let response = await fetch("http://localhost:8000/api/v1/titles/" + movie.id)
+            let data = await response.json()
+            document.querySelector(".modal__image").setAttribute("src", data.image_url);
+            document.querySelector("#modal__movie-information").innerText = addInformation(data);
+            modal.style.display = "block";
+        })
+    }
 }

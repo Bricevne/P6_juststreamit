@@ -59,7 +59,6 @@ getAllMoviesData("%20").then((movies) => {
 
     })
     document.querySelector(".best-movie__btn").id = bestMovieId
-
 })
 
 //-------------------------------------------------------------------- Set 7 best videos except for the best one
