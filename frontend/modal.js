@@ -1,4 +1,4 @@
-/* Function to get all movie information */
+//-------------------------------------------------------------------- Function to get all movie information 
 function addInformation(movie) {
     const title = movie.title;
     const genre = movie.genres.join(", ");
@@ -18,13 +18,14 @@ function addInformation(movie) {
     Imdb score: ${imdbScore}\n\
     Director: ${director}\n\
     Actors: ${actors}\n\
-    Duration: ${duration}\n\
+    Duration: ${duration} min\n\
     Country: ${country}\n\
     Box Office: ${boxOffice}\n\
     Description: ${description}`
   }
 
-const myTimeout = setTimeout(main, 500);
+
+//-------------------------------------------------------------------- Function to add all click events
 
 function main() {
     // Get the modal
@@ -35,7 +36,7 @@ function main() {
     var span = document.querySelector(".modal__close-btn");
 
 
-    // When the user clicks on the button, open the modal
+    // When the user clicks on the button play, open the modal
 
     btn.addEventListener("click", async function() {
         const response = await fetch("http://localhost:8000/api/v1/titles/" + btn.id)
@@ -57,6 +58,8 @@ function main() {
     }
     })
 
+    // When the user clicks on an image, open the modal
+
     const images = document.querySelectorAll(".other-movies__image");
     for (let movie of images) {
         movie.addEventListener("click", async function() {
@@ -68,3 +71,8 @@ function main() {
         })
     }
 }
+
+
+//-------------------------------------------------------------------- Call the main function with a delay
+
+setTimeout(main, 700);

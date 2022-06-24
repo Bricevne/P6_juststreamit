@@ -3,7 +3,7 @@ const numberOfImagesScreen = 5;
 const numberOfSlides = numberOfImages - numberOfImagesScreen;
 const imageWidth = 20; // image width + padding right
 
-const categories = ["new-releases", "drama", "mystery", "action"];
+const categories = ["new-releases", "thriller", "mystery", "action"];
 
 function main() {
 
@@ -42,4 +42,4 @@ function main() {
         }
     }
 
-const mySecondTimeout = setTimeout(main, 500);
+setTimeout(main, 550);

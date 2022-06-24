@@ -79,7 +79,7 @@ getAllMoviesData("%20").then((movies) => {
 })
 //-------------------------------------------------------------------- Set 7 best drama videos
 
-getAllMoviesData("drama").then((movies) => {
+getAllMoviesData("thriller").then((movies) => {
     let movieInf = getMoviesIdAndUrl(movies);
     movieInf.id.shift();
     movieInf.imageUrl.shift();
@@ -90,7 +90,7 @@ getAllMoviesData("drama").then((movies) => {
             id: MovieId,
             imageUrl: MovieImageUrl
         } 
-    setImageHTML(movie, ".drama", "other-movies__image")
+    setImageHTML(movie, ".thriller", "other-movies__image")
     }
 })
 
