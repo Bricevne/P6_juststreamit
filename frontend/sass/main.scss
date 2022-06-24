@@ -1,5 +1,5 @@
 $colour-primary: #fff;
-$colour-secondary: #aaa;
+$colour-secondary: rgb(170, 170, 170);
 $colour-accent: #225e8f;
 $colour-black: #000;
 $colour-title: #8f222f;
@@ -18,6 +18,11 @@ $heading-shadow-size: .55rem;
     text-shadow: $offset $offset $colour;
 }
 
+@mixin cursor() {
+    &:hover {
+        cursor: pointer;
+    }
+}
 
 
 @font-face
@@ -31,28 +36,42 @@ $heading-shadow-size: .55rem;
     font-weight: normal;
     font-style: normal;
 }
+* {
+    scrollbar-width: none;
+    letter-spacing: 0.05rem;
+    color: rgb(250, 250, 250);
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    padding: 0;
+    margin: 0;
+    margin-block: 0;
+  }
 
-*,
 *::after,
 *::before {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
 }
+
+*::-webkit-scrollbar {
+    display: none;
+  }
 
 html {
     font-size: 70%;
+    overflow-x: hidden;
 }
 
 body {
     box-sizing: border-box;
     background: black;
-
+    min-height: 400vh;
     font-family: 'Dayrom', sans-serif;
     color: $colour-primary;
     font-size: 2rem;
     line-height: 1.7;
 }
-
 
 h1 {
     font-family: 'Dayrom', sans-serif;
@@ -60,23 +79,19 @@ h1 {
     font-style: italic;
 }
 
-button {
-    font-family: 'Dayrom', sans-serif;
-    font-style: italic;
-    font-size: 2.75rem;
-}
-
-
 .header {
     background-color: $colour-secondary;
-    height: 10rem;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    height: 60px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
     width: 100%;
     &__logo {
-        font-size: 4rem;
+        font-size: 3rem;
         color: $colour-title;
         margin-left: 10rem;
         @include heading-shadow()
@@ -100,30 +115,24 @@ button {
                 color: $colour-title;
             }
         }
-        &--active {
-            color: $colour-accent;
-            &:hover {
-                cursor: default;
-                color: $colour-title;
-            }
-        }
     }
 }
 
 .container {
     margin: 2.5rem;
+
 }
 
 .best-movie {
     position: relative;
-    margin-bottom: 40px;
     & picture {
         display: block;
         z-index: -1;
         position: relative;
-        height: 600px;
+        height: 450px;
         width: auto;
         background-image: linear-gradient(to bottom, rgba(7, 7, 7, 0.7) 10%, rgba(0, 0, 0, 0)); /*netflix gradiant*/
+
     }
     &__image {
         position: absolute;
@@ -134,6 +143,7 @@ button {
         object-fit: cover;
         object-position: center 60%;
         opacity: 0.5;
+
     }
     &__btn {
         padding: 4px 30px;
@@ -150,7 +160,7 @@ button {
     }
     & h1 {
         position: absolute;
-        font-size: 5rem;
+        font-size: 4rem;
         top: 20%;
     }
     &__description {
@@ -217,12 +227,57 @@ button {
     }
 }
 
-.other-categories {
-    text-align: center;
-    & > div {
-        margin-bottom: 40px;
+
+.other-movies {
+    position: relative;
+    overflow: hidden;
+    padding: 55px 0;
+    &__title {
+        font-size: 2rem;
     }
-    & h1 {
-        font-size: 2.5rem;
+    &__pictures {
+        margin-top: 5px;
+        overflow: visible;
+        clear: both;
+        white-space: nowrap;
+        display: flex;
+
+        height: 155px;
+        width: 100%;
+        transition: transform .5s ease;
+        & picture {
+                z-index: -1;
+                margin-right: 15px;
+                position: relative;
+                display: inline-block;
+                padding-right: 25px;
+                height: 155px;
+                width: 19%;
+            }
+        }
+    &__image {
+        height: 100%;
+        position: absolute;
+        width: 100%;
+        object-fit: cover;
+        object-position: center 60%;
+        @include cursor()
+
+    }
+    &__left-arrow {
+        font-size: 5rem;
+        z-index: 0;
+        position: absolute;
+        top: 120px;
+        left: 0px;
+        @include cursor()
+    }
+    &__right-arrow {
+        font-size: 5rem;
+        z-index: 0;
+        position: absolute;
+        top: 120px;
+        right: 0px;
+        @include cursor()
     }
 }
