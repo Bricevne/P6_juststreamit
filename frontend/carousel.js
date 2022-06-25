@@ -3,6 +3,8 @@ const numberOfImagesScreen = 5;
 const numberOfSlides = numberOfImages - numberOfImagesScreen;
 const imageWidth = 20; // image width + padding right
 
+//-------------------------------------------------------------------- Add categories if more categories on the website
+
 const categories = ["new-releases", "thriller", "mystery", "action"];
 
 function main() {
