@@ -190,26 +190,17 @@ h1 {
         margin: 15% auto; /* 15% from the top and centered */
         padding: 20px;
         line-height: 4rem;
-        font-size: 2rem;
         border: 1px solid #888;
         width: 80%; /* Could be more or less, depending on screen size */
-        
+        overflow: auto;        
     }
-    & picture {
-        z-index: 2;
-        background-color: rgb(37, 37, 37);
-        position: relative;
-        margin-left: 5%;
-        margin-bottom: 5%;
-        float: right;
-        height: 536px;
-        width: 35%;
-    }
+
     &__image {
-        position: absolute;
+        float: right;
         z-index: 3;
-        height: 100%;
-        width: auto;
+        margin: 2% 5%;
+        width: 25%;
+        box-sizing: border-box;
     }
     &__close-btn {
         color: #aaa;
