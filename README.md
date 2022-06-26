@@ -4,27 +4,27 @@ This project is a Web application which displays the best movies from the 'OCMov
 
 ## Installation
 
-1. Clone this repository using 
+Clone this repository using 
 
 `$ git clone https://github.com/Bricevne/P6_juststreamit.git`
 
 
-2. Move to the ocmovies-api root folder with 
+Move to the ocmovies-api root folder with 
 
 `$ cd backend`
 
 
-3. Install project dependencies with 
+Install project dependencies with 
 
 `pipenv install` 
 
 
-4. Create and populate project database with 
+Create and populate project database with 
 
 `pipenv run python manage.py create_db`
 
 
-5. Run the server with 
+Run the server with 
 
 `pipenv run python manage.py runserver`
 
