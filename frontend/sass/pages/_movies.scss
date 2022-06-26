@@ -1,0 +1,117 @@
+.best-movie {
+    position: relative;
+    & picture {
+        display: block;
+        z-index: -1;
+        position: relative;
+        height: 450px;
+        width: auto;
+        background-image: linear-gradient(to bottom, rgba(7, 7, 7, 0.7) 10%, rgba(0, 0, 0, 0)); /*netflix gradiant*/
+        @include mobile-only() {
+            height: 350px;
+        }
+
+    }
+    &__image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: center 60%;
+        opacity: 0.5;
+
+    }
+    &__btn {
+        padding: 4px 30px;
+        position: absolute;
+        top: 70%;
+        margin-left: 5%;
+        border: 0.1rem solid white;
+        border-radius: 5px;
+        text-align: center;
+        text-decoration: none;
+        color: white;
+        background-color: red;
+        cursor: pointer;
+        @include mobile-only() {
+            padding: 2px 20px;
+            font-size: 1.5rem;
+        }
+    }
+    &__title {
+        position: absolute;
+        font-size: 4rem;
+        top: 20%;
+        @include mobile-only() {
+            font-size: 3rem;
+        }
+    }
+    &__description {
+        position: absolute;
+        height: 25%;
+        overflow: auto;
+        margin-left: 3%;
+        width: 50%;
+        top: 40%;
+        @include mobile-only() {
+            top: 40%;
+            width: 90%;
+            text-align: justify;
+            height: 30%;
+            font-size: 1.5rem;
+        }
+    }
+}
+
+.other-movies {
+    position: relative;
+    overflow: hidden;
+    padding: 55px 0;
+    &__title {
+        font-size: 2rem;
+    }
+    &__pictures {
+        margin-top: 5px;
+        white-space: nowrap;
+        height: 155px;
+        width: 100%;
+        transition: transform .5s ease;
+        & picture {
+                margin-right: 15px;
+                position: relative;
+                display: inline-block;
+                padding-right: 25px;
+                height: 155px;
+                width: 19%;
+                @include mobile-only() {
+                    width: 17%;
+                }
+            }
+        }
+    &__image {
+        height: 100%;
+        position: absolute;
+        width: 100%;
+        object-fit: cover;
+        object-position: center 60%;
+        @include cursor()
+    }
+    &__left-arrow {
+        font-size: 5rem;
+        z-index: 0;
+        position: absolute;
+        top: 120px;
+        left: 0px;
+        @include cursor()
+    }
+    &__right-arrow {
+        font-size: 5rem;
+        z-index: 0;
+        position: absolute;
+        top: 120px;
+        right: 0px;
+        @include cursor()
+    }
+}

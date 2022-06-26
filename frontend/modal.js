@@ -42,7 +42,7 @@ function main() {
         const response = await fetch("http://localhost:8000/api/v1/titles/" + btn.id)
         let data = await response.json()
         document.querySelector(".modal__image").setAttribute("src", data.image_url);
-        document.querySelector("#modal__movie-information").innerText = addInformation(data);
+        document.querySelector(".modal__movie-information").innerText = addInformation(data);
         modal.style.display = "block";
     })
 
@@ -66,7 +66,7 @@ function main() {
             let response = await fetch("http://localhost:8000/api/v1/titles/" + movie.id)
             let data = await response.json()
             document.querySelector(".modal__image").setAttribute("src", data.image_url);
-            document.querySelector("#modal__movie-information").innerText = addInformation(data);
+            document.querySelector(".modal__movie-information").innerText = addInformation(data);
             modal.style.display = "block";
         })
     }

@@ -1,0 +1,7 @@
+.container {
+    margin: 2.5rem;
+    @include mobile-only() {
+        margin: 1rem;
+    }
+
+}

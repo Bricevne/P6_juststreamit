@@ -1,0 +1,25 @@
+.nav {
+    margin-right: 10rem;
+    text-align: right;
+    @include mobile-only() {
+        margin-right: 5rem;
+    }
+    & ul {
+        display: flex;
+        list-style-type: none;
+        @include mobile-only() {
+            flex-direction: column;
+        }
+    }
+    &__link {
+        font-size: 1.5rem;
+        padding-left: 3rem;
+        & a {
+            text-decoration: none;
+            color: $colour-black;
+            &:hover {
+                color: $colour-title;
+            }
+        }
+    }
+}

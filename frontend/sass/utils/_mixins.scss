@@ -1,0 +1,15 @@
+@mixin heading-shadow($colour:lightness-shift($colour-secondary), $offset: 0.5rem) {
+    text-shadow: $offset $offset $colour;
+}
+
+@mixin cursor() {
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+@mixin mobile-only {
+    @media screen and (max-width: map-get($breakpoints, mobile)) {
+        @content;
+    }
+}
