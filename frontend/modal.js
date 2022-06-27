@@ -10,18 +10,26 @@ function addInformation(movie) {
     const duration = movie.duration;
     const country = movie.countries[0];
     const boxOffice = movie.avg_vote;
-    const description = movie.long_description;
-    return `Title: ${title}\n\
-    Genre: ${genre}\n\
-    Release: ${releaseDate}\n\
-    Rated: ${rated}\n\
-    Imdb score: ${imdbScore}\n\
-    Director: ${director}\n\
-    Actors: ${actors}\n\
-    Duration: ${duration} min\n\
-    Country: ${country}\n\
-    Box Office: ${boxOffice}\n\
-    Description: ${description}`
+    const description = movie.description;
+    return `<h1 class="modal__movie-information__title">${title}</h1>
+    <h2 class="modal__movie-information__production">${director}, ${country}</h2>
+
+    <div class="modal__movie-information__data">
+        <p>${genre}</p>
+        <p>${releaseDate}</p>
+        <p>${duration}min</p>
+    </div>
+
+    <div class="modal__movie-information__cast">
+        Actors : <p>${actors}</p>
+        Description : <p>${description}</p>
+    </div>
+
+    <div class="modal__movie-information__score">
+        <p>Rated: ${rated}</p>
+        <p>Box Office: ${boxOffice}</p>
+        <p>Imdb score: ${imdbScore}</p>
+    </div>`
   }
 
 
@@ -42,7 +50,7 @@ function main() {
         const response = await fetch("http://localhost:8000/api/v1/titles/" + btn.id)
         let data = await response.json()
         document.querySelector(".modal__image").setAttribute("src", data.image_url);
-        document.querySelector(".modal__movie-information").innerText = addInformation(data);
+        document.querySelector(".modal__movie-information").innerHTML = addInformation(data);
         modal.style.display = "block";
     })
 
@@ -66,7 +74,7 @@ function main() {
             let response = await fetch("http://localhost:8000/api/v1/titles/" + movie.id)
             let data = await response.json()
             document.querySelector(".modal__image").setAttribute("src", data.image_url);
-            document.querySelector(".modal__movie-information").innerText = addInformation(data);
+            document.querySelector(".modal__movie-information").innerHTML = addInformation(data);
             modal.style.display = "block";
         })
     }

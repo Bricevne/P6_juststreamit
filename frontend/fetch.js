@@ -55,7 +55,7 @@ getAllMoviesData("%20").then((movies) => {
     setImageHTML(bestMovie, ".best-movie", "best-movie__image")
     getMoviePageById(bestMovieId).then((information) => {
         document.querySelector(".best-movie").innerHTML += `<h1 class="best-movie__title">${information.title}</h1>\
-        <p class="best-movie__description">${information.long_description}</p>`
+        <p class="best-movie__description">${information.description}</p>`
 
     })
     document.querySelector(".best-movie__btn").id = bestMovieId

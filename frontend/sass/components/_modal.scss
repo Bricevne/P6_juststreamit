@@ -20,8 +20,46 @@
     }
     &__movie-information {
         @include mobile-only() {
-            font-size: 1rem;
             line-height: 2rem;
+        }
+        &__title {
+            text-align: center;
+            font-style: normal;
+            font-size: 5rem;
+            padding-bottom: 2rem;
+        }
+        &__production {
+            text-align: center;
+            font-size: 1.8rem;
+            color: brown;
+        }
+        &__data {
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            font-style: italic;
+            padding-bottom: 2rem;
+        }
+        &__cast {
+            font-size: 2rem;
+            padding-bottom: 60px;
+            & p {
+                font-size: 1.8rem;
+                padding-bottom: 1.8rem;
+                color: rgb(188, 188, 188);
+                text-align: justify;
+
+            }
+        }
+        &__score {
+            display: flex;
+            justify-content: flex-end;
+            font-style: italic;
+            & p {
+                padding-left: 3rem;
+                color: brown;
+                font-size: 2rem;
+            }
         }
     }
     &__image {
