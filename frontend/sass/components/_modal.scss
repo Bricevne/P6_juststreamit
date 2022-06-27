@@ -20,18 +20,24 @@
     }
     &__movie-information {
         @include mobile-only() {
-            line-height: 2rem;
+            line-height: 1.5rem;
         }
         &__title {
             text-align: center;
             font-style: normal;
             font-size: 5rem;
             padding-bottom: 2rem;
+            @include mobile-only() {
+                font-size: 2rem;
+            }
         }
         &__production {
             text-align: center;
             font-size: 1.8rem;
             color: brown;
+            @include mobile-only() {
+                font-size: 1rem;
+            }
         }
         &__data {
             display: flex;
@@ -39,15 +45,26 @@
             justify-content: space-evenly;
             font-style: italic;
             padding-bottom: 2rem;
+            @include mobile-only() {
+                font-size: 0.8rem;
+                flex-direction: column;
+            }
         }
         &__cast {
             font-size: 2rem;
             padding-bottom: 60px;
+            @include mobile-only() {
+                font-size: 1rem;
+                padding-bottom: 0;
+            }
             & p {
                 font-size: 1.8rem;
                 padding-bottom: 1.8rem;
                 color: rgb(188, 188, 188);
                 text-align: justify;
+                @include mobile-only() {
+                    font-size: 0.8rem;
+                }
 
             }
         }
@@ -55,10 +72,19 @@
             display: flex;
             justify-content: flex-end;
             font-style: italic;
+            @include mobile-only() {
+                flex-direction: column;
+                align-items: flex-end;
+
+            }
             & p {
                 padding-left: 3rem;
                 color: brown;
                 font-size: 2rem;
+                @include mobile-only() {
+                    font-size: 0.7rem;
+                    padding-left: 1rem;
+                }
             }
         }
     }

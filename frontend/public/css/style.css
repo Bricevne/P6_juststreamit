@@ -97,7 +97,7 @@ body {
 }
 @media screen and (max-width: 599px) {
   .modal__movie-information {
-    line-height: 2rem;
+    line-height: 1.5rem;
   }
 }
 .modal__movie-information__title {
@@ -106,10 +106,20 @@ body {
   font-size: 5rem;
   padding-bottom: 2rem;
 }
+@media screen and (max-width: 599px) {
+  .modal__movie-information__title {
+    font-size: 2rem;
+  }
+}
 .modal__movie-information__production {
   text-align: center;
   font-size: 1.8rem;
   color: brown;
+}
+@media screen and (max-width: 599px) {
+  .modal__movie-information__production {
+    font-size: 1rem;
+  }
 }
 .modal__movie-information__data {
   display: flex;
@@ -118,9 +128,21 @@ body {
   font-style: italic;
   padding-bottom: 2rem;
 }
+@media screen and (max-width: 599px) {
+  .modal__movie-information__data {
+    font-size: 0.8rem;
+    flex-direction: column;
+  }
+}
 .modal__movie-information__cast {
   font-size: 2rem;
   padding-bottom: 60px;
+}
+@media screen and (max-width: 599px) {
+  .modal__movie-information__cast {
+    font-size: 1rem;
+    padding-bottom: 0;
+  }
 }
 .modal__movie-information__cast p {
   font-size: 1.8rem;
@@ -128,15 +150,32 @@ body {
   color: rgb(188, 188, 188);
   text-align: justify;
 }
+@media screen and (max-width: 599px) {
+  .modal__movie-information__cast p {
+    font-size: 0.8rem;
+  }
+}
 .modal__movie-information__score {
   display: flex;
   justify-content: flex-end;
   font-style: italic;
 }
+@media screen and (max-width: 599px) {
+  .modal__movie-information__score {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+}
 .modal__movie-information__score p {
   padding-left: 3rem;
   color: brown;
   font-size: 2rem;
+}
+@media screen and (max-width: 599px) {
+  .modal__movie-information__score p {
+    font-size: 0.7rem;
+    padding-left: 1rem;
+  }
 }
 .modal__image {
   float: right;
